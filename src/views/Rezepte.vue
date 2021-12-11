@@ -5,13 +5,11 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th>Rezept Id</th>
         <th>Rezept Name</th>
       </tr>
       </thead>
       <tbody>
       <tr v-for="rezept in rezepte" v-bind:key="rezept.id">
-        <td>{{ rezept.id }}</td>
         <td>{{ rezept.name }}</td>
       </tr>
       </tbody>
@@ -20,7 +18,6 @@
 </template>
 
 <script>
-import RezeptService from '../services/RezeptService'
 
 export default {
   name: 'Rezepte',
@@ -30,14 +27,19 @@ export default {
     }
   },
   methods: {
-    getRezepte () {
-      RezeptService.getRezepte().then((response) => {
-        this.rezepte = response.data
-      })
-    }
   },
-  created () {
-    this.getRezepte()
+  mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/rezepte/all'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(rezept => {
+        this.rezepte.push(rezept)
+      }))
+      .catch(error => console.log('error', error))
   }
 }
 </script>
