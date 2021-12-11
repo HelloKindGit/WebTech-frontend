@@ -1,10 +1,14 @@
-import axios from 'axios'
-
-const RECIPE_API_BASE_URL = 'http://localhost:8080/api/rezepte/all'
-
 class RezeptService {
   getRezepte () {
-    return axios.get(RECIPE_API_BASE_URL)
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch('http://localhost:8080/api/rezepte/all', requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error))
   }
 }
 
