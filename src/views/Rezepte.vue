@@ -14,6 +14,9 @@
       </tr>
       </tbody>
     </table>
+    <div>
+      <a class="btn btn-primary" href="#" role="button" @click="$router.push('rezept')">Rezept</a>
+    </div>
   </div>
 </template>
 
