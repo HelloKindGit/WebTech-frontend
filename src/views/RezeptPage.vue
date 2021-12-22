@@ -1,5 +1,5 @@
 <template>
-"--Rezept Placeholder--"
+"-- Rezept Placeholder --"
 </template>
 
 <script>
