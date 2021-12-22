@@ -32,7 +32,7 @@ export default {
   methods: {
   },
   mounted () {
-    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/rezepte/all'
+    const endpoint = 'https://webtech-anwendung.herokuapp.com/api/rezepte/all'
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'
