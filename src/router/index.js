@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import Rezepte from '../views/Rezepte'
 import About from '../views/About'
 import RezeptPage from '../views/RezeptPage'
+import CreateRezept from '../views/CreateRezept'
+import BearbeiteRezept from '@/views/BearbeiteRezept'
 
 const routes = [
   {
@@ -21,9 +23,19 @@ const routes = [
     component: Rezepte
   },
   {
-    path: '/rezept',
+    path: '/rezept/:id',
     name: 'RezeptPage',
     component: RezeptPage
+  },
+  {
+    path: '/createRezept',
+    name: 'CreateRezept',
+    component: CreateRezept
+  },
+  {
+    path: '/bearbeiteRezept/:id',
+    name: 'BearbeiteRezept',
+    component: BearbeiteRezept
   }
 ]
 
