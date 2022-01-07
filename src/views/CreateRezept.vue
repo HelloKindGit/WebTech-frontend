@@ -38,6 +38,13 @@
           Gib die Anzahl der Portionen an!
         </div>
       </div>
+      <div class="form-group">
+        <label class="form-label" for="inputKategorie">Kategorie:</label>
+        <input v-model="kategorie" type="text" class="form-control" id="inputKategorie" required>
+        <div class="invalid-feedback">
+          Gib eine Kategorie an!
+        </div>
+      </div>
     </div>
     <button type="button" class="btn upload__btn" @click="submitRezept">
       <span>Upload Rezept</span>
@@ -75,19 +82,21 @@ export default {
       vorbereitungsZeit: null,
       kochZeit: null,
       portionen: null,
+      kategorie: '',
       zutatName: '',
       menge: null
     }
   },
   methods: {
     submitRezept () {
-      if (!this.name || !this.beschreibung || !this.vorbereitungsZeit || !this.kochZeit || !this.portionen) return
+      if (!this.name || !this.beschreibung || !this.vorbereitungsZeit || !this.kochZeit || !this.portionen || !this.kategorie) return
       const recipe = {
         name: this.name,
         beschreibung: this.beschreibung,
         vorbereitungsZeit: this.vorbereitungsZeit,
         kochZeit: this.kochZeit,
-        portionen: this.portionen
+        portionen: this.portionen,
+        kategorie: this.kategorie
       }
       const endpoint = BACKEND_BASE_URL
       const myHeaders = new Headers()
@@ -107,6 +116,7 @@ export default {
           this.vorbereitungsZeit = this.vorbereitungsZeit = null
           this.kochZeit = this.kochZeit = null
           this.portionen = this.portionen = null
+          this.kategorie = this.kategorie = null
         })
         .catch(error => console.log('error', error))
     }
