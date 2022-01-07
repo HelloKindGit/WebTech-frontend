@@ -6,6 +6,9 @@
       <h1 class="rezept__titel">
         <span>{{ rezept.name }}</span>
       </h1>
+      <h3>
+        <span>{{ rezept.kategorie }}</span>
+      </h3>
       <div class="rezept__details">
         <div class="rezept__info">
           <span class="rezept__info-text">vorbereitung:</span>

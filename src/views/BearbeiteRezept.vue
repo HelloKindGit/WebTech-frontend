@@ -23,6 +23,10 @@
         <label class="form-label" for="inputPortionen">Portionen:</label>
         <input v-model="portionen" type="number" class="form-control" :placeholder=rezept.portionen id="inputPortionen">
       </div>
+      <div class="form-group">
+        <label class="form-label" for="inputKategorie">Kategorie:</label>
+        <input v-model="kategorie" type="text" class="form-control" :placeholder=rezept.kategorie id="inputKategorie">
+      </div>
     </div>
     <button type="button" class="btn upload__btn" @click="changeRezept">
       <span>Upload Rezept</span>
@@ -82,6 +86,7 @@ export default {
       vorbereitungsZeit: null,
       kochZeit: null,
       portionen: null,
+      kategorie: '',
       zutatName: '',
       menge: null
     }
@@ -93,7 +98,8 @@ export default {
         beschreibung: this.beschreibung,
         vorbereitungsZeit: this.vorbereitungsZeit,
         kochZeit: this.kochZeit,
-        portionen: this.portionen
+        portionen: this.portionen,
+        kategorie: this.kategorie
       })
       const endpoint = BACKEND_BASE_URL + this.rezeptID
       const myHeaders = new Headers()
@@ -111,6 +117,7 @@ export default {
           this.vorbereitungsZeit = this.vorbereitungsZeit = null
           this.kochZeit = this.kochZeit = null
           this.portionen = this.portionen = null
+          this.kategorie = this.kategorie = null
         })
         .catch(error => console.log('error', error))
     },
