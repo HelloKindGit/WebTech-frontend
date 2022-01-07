@@ -1,6 +1,9 @@
 <template>
   <div class="about">
-    <div class="text">Rezepty ist ein simples Rezept-Buch.</div>
+    <div class="text">Rezepty ist ein simples Rezept-Buch mit dem du deine:</div>
+    <div class="text1">- Lieblings-Rezepte erstellen kannst.</div>
+    <div class="text1">- Lieblings-Rezepte bearbeiten kannst.</div>
+    <div class="text1">- Lieblings-Rezepte auch wieder löschen kannst.</div>
   </div>
   <div class="text2">Seite erstellt von Dominik Wache</div>
 </template>
@@ -8,7 +11,12 @@
 <style scoped>
 .text {
   font-size: xxx-large;
-  padding-top: 10rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.text1 {
+  font-size: xx-large;
 }
 
 .text2 {
