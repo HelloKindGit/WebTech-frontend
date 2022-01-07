@@ -5,6 +5,9 @@ import About from '../views/About'
 import RezeptPage from '../views/RezeptPage'
 import CreateRezept from '../views/CreateRezept'
 import BearbeiteRezept from '@/views/BearbeiteRezept'
+import ProfileComponent from '@/components/ProfileComponent'
+import Login from '@/components/Login'
+import { LoginCallback, navigationGuard } from '@okta/okta-vue'
 
 const routes = [
   {
@@ -20,22 +23,50 @@ const routes = [
   {
     path: '/rezepte',
     name: 'Rezepte',
-    component: Rezepte
+    component: Rezepte,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/rezept/:id',
     name: 'RezeptPage',
-    component: RezeptPage
+    component: RezeptPage,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/createRezept',
     name: 'CreateRezept',
-    component: CreateRezept
+    component: CreateRezept,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/bearbeiteRezept/:id',
     name: 'BearbeiteRezept',
-    component: BearbeiteRezept
+    component: BearbeiteRezept,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/login/callback',
+    component: LoginCallback
+  },
+  {
+    path: '/profile',
+    name: ProfileComponent,
+    component: ProfileComponent,
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
@@ -44,5 +75,7 @@ const router = createRouter({
   linkActiveClass: 'active',
   routes
 })
+
+router.beforeEach(navigationGuard)
 
 export default router
