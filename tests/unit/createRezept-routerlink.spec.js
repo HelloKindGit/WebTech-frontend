@@ -1,11 +1,10 @@
 import { mount } from '@vue/test-utils'
 import Rezepte from '@/views/Rezepte'
 
-test('CreateRezept-Button drücken', async () => {
+test('CreateRezept-Button drücken', () => {
   const mockRouter = {
     push: jest.fn()
   }
-
   const wrapper = mount(Rezepte, {
     props: {
       isAuthenticated: true
@@ -16,9 +15,7 @@ test('CreateRezept-Button drücken', async () => {
       }
     }
   })
-
-  await wrapper.find('button').trigger('click')
-
+  wrapper.find('button').trigger('click')
   expect(mockRouter.push).toHaveBeenCalledTimes(1)
   expect(mockRouter.push).toHaveBeenCalledWith('createRezept')
 })
