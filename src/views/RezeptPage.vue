@@ -77,6 +77,8 @@
 
 <script>
 
+import { BACKEND_BASE_URL } from '@/urlconstants'
+
 export default {
   name: 'RezeptPage',
   data () {
@@ -103,7 +105,7 @@ export default {
   },
   mounted () {
     this.rezeptID = this.$route.params.id
-    const endpoint = 'https://webtech-anwendung.herokuapp.com/api/rezepte/' + this.rezeptID
+    const endpoint = BACKEND_BASE_URL + this.rezeptID
     const requestOptions = {
       method: 'GET',
       redirect: 'follow'

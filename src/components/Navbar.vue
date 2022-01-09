@@ -10,7 +10,7 @@
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/about">About</router-link>
-          <router-link class="nav-link" to="/rezepte" v-if="authenticated">Rezepte</router-link>
+          <router-link class="nav-link" to="/rezepte">Rezepte</router-link>
           <router-link class="nav-link" to="/profile" v-if="authenticated">Profil</router-link>
           <router-link class="nav-link" to="/login" v-if="!authenticated">Login</router-link>
           <a class="nav-link" v-if="authenticated" v-on:click="logout()">Logout</a>
