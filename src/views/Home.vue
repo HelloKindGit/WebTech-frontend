@@ -5,7 +5,7 @@
     </h1>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="icon"><i class="fa fa-book"></i></div>
-    <h1>Dein Kochbuch</h1>
+    <h1>Dein Kochbuch.</h1>
     <div v-if="this.$root.authenticated">
       <p>Welcome back, {{ claims.name }}!</p>
     </div>
@@ -34,16 +34,20 @@ export default {
 }
 </script>
 <style scoped>
+#home {
+  margin-top: 3rem;
+}
+
 .icon {
   border: none;
   padding: 12px 16px;
-  font-size: 100px;
+  font-size: 150px;
 }
 
 .title {
   position: center;
   font-weight: 700;
-  font-size: 3.25rem;
+  font-size: 5rem;
   text-transform: uppercase;
   line-height: 1.95;
   text-align: center;
