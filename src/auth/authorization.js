@@ -11,13 +11,14 @@ const oktaSignIn = new OktaSignIn({
     issuer: 'https://dev-80022801.okta.com/oauth2/default',
     display: 'page',
     scopes: ['openid', 'profile', 'email']
-  }
+  },
+  features: { registration: true }
 })
 
 const oktaAuth = new OktaAuth({
   issuer: 'https://dev-80022801.okta.com/oauth2/default',
   clientId: '0oa3igwin4hVN0Wlp5d7',
-  redirectUri: window.location.origin + '/login/callback',
+  redirectUri: FRONTEND_BASE_URL + '/login/callback',
   scopes: ['openid', 'profile', 'email']
 })
 
