@@ -8,6 +8,7 @@ import BearbeiteRezept from '@/views/BearbeiteRezept'
 import ProfileComponent from '@/components/ProfileComponent'
 import Login from '@/components/Login'
 import { LoginCallback, navigationGuard } from '@okta/okta-vue'
+import { BACKEND_BASE_URL } from '@/config'
 
 const routes = [
   {
@@ -71,8 +72,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  linkActiveClass: 'active',
+  history: createWebHistory(BACKEND_BASE_URL),
   routes
 })
 
