@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { BACKEND_BASE_URL } from '@/config'
+import { BACKEND_BASE_URL } from '@/urlconstants'
 
 (function () {
   'use strict'

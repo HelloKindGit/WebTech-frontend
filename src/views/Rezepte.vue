@@ -35,7 +35,7 @@
 
 <script>
 
-import { BACKEND_BASE_URL, BACKEND_REZEPTE_ALL } from '@/config'
+import { BACKEND_BASE_URL, BACKEND_REZEPTE_ALL } from '@/urlconstants'
 
 export default {
   name: 'Rezepte',

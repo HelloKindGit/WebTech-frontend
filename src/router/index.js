@@ -8,7 +8,6 @@ import BearbeiteRezept from '@/views/BearbeiteRezept'
 import ProfileComponent from '@/components/ProfileComponent'
 import Login from '@/components/Login'
 import { LoginCallback, navigationGuard } from '@okta/okta-vue'
-import { BACKEND_BASE_URL } from '@/config'
 
 const routes = [
   {
@@ -24,34 +23,22 @@ const routes = [
   {
     path: '/rezepte',
     name: 'Rezepte',
-    component: Rezepte,
-    meta: {
-      requiresAuth: true
-    }
+    component: Rezepte
   },
   {
     path: '/rezept/:id',
     name: 'RezeptPage',
-    component: RezeptPage,
-    meta: {
-      requiresAuth: true
-    }
+    component: RezeptPage
   },
   {
     path: '/createRezept',
     name: 'CreateRezept',
-    component: CreateRezept,
-    meta: {
-      requiresAuth: true
-    }
+    component: CreateRezept
   },
   {
     path: '/bearbeiteRezept/:id',
     name: 'BearbeiteRezept',
-    component: BearbeiteRezept,
-    meta: {
-      requiresAuth: true
-    }
+    component: BearbeiteRezept
   },
   {
     path: '/login',
@@ -72,7 +59,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(BACKEND_BASE_URL),
+  history: createWebHistory(),
   routes
 })
 

@@ -1,10 +1,11 @@
 import OktaSignIn from '@okta/okta-signin-widget'
 import { OktaAuth } from '@okta/okta-auth-js'
+import { FRONTEND_BASE_URL } from '@/urlconstants'
 
 const oktaSignIn = new OktaSignIn({
   baseUrl: 'https://dev-80022801.okta.com',
   clientId: '0oa3igwin4hVN0Wlp5d7',
-  redirectUri: 'https://webtech-rezeptbuch-frontend.herokuapp.com/login/callback',
+  redirectUri: FRONTEND_BASE_URL + '/login/callback',
   authParams: {
     pkce: true,
     issuer: 'https://dev-80022801.okta.com/oauth2/default',
