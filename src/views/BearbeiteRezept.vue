@@ -250,7 +250,7 @@ button {
 .upload {
   background-color: aliceblue;
   border: 2px solid black;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 .needs-validation {
   background-color: aliceblue;

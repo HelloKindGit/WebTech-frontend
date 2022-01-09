@@ -58,7 +58,7 @@
               <h3>{{ zutat.name.split(',')[0] }}</h3>
             </td>
             <td>
-              <h3>{{ zutat.menge }} {{ zutat.name.split(',')[1] }}</h3>
+              <h3>{{ Math.round(zutat.menge) }} {{ zutat.name.split(',')[1] }}</h3>
             </td>
           </tr>
           </tbody>
@@ -91,14 +91,14 @@ export default {
       if (portionen <= 1) return
       const newPortion = portionen - 1
       this.rezept.zutaten.forEach(ing => {
-        ing.menge = Math.round(((ing.menge * newPortion) / portionen))
+        ing.menge = (ing.menge * newPortion) / portionen
       })
       this.rezept.portionen = newPortion
     },
     portInc (portionen) {
       const newPortion = portionen + 1
       this.rezept.zutaten.forEach(ing => {
-        ing.menge = Math.round(((ing.menge * newPortion) / portionen))
+        ing.menge = (ing.menge * newPortion) / portionen
       })
       this.rezept.portionen = newPortion
     }
