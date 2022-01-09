@@ -91,14 +91,14 @@ export default {
       if (portionen <= 1) return
       const newPortion = portionen - 1
       this.rezept.zutaten.forEach(ing => {
-        ing.menge = (ing.menge * newPortion) / portionen
+        ing.menge = Math.round(((ing.menge * newPortion) / portionen))
       })
       this.rezept.portionen = newPortion
     },
     portInc (portionen) {
       const newPortion = portionen + 1
       this.rezept.zutaten.forEach(ing => {
-        ing.menge = (ing.menge * newPortion) / portionen
+        ing.menge = Math.round(((ing.menge * newPortion) / portionen))
       })
       this.rezept.portionen = newPortion
     }
