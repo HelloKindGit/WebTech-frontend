@@ -23,22 +23,34 @@ const routes = [
   {
     path: '/rezepte',
     name: 'Rezepte',
-    component: Rezepte
+    component: Rezepte,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/rezept/:id',
     name: 'RezeptPage',
-    component: RezeptPage
+    component: RezeptPage,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/createRezept',
     name: 'CreateRezept',
-    component: CreateRezept
+    component: CreateRezept,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/bearbeiteRezept/:id',
     name: 'BearbeiteRezept',
-    component: BearbeiteRezept
+    component: BearbeiteRezept,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/login',
