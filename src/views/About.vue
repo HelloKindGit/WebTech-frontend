@@ -1,14 +1,18 @@
 <template>
   <div class="about">
-    <div class="text">Rezepty ist ein simples Rezept-Buch mit dem du deine:</div>
-    <div class="text1">- Lieblings-Rezepte erstellen kannst.</div>
-    <div class="text1">- Lieblings-Rezepte bearbeiten kannst.</div>
-    <div class="text1">- Lieblings-Rezepte auch wieder löschen kannst.</div>
+    <div class="text">Rezepty ist ein simples Rezept-Buch, mit dem du deine:</div>
+    <div class="text1">- Lieblingsrezepte erstellen und speichern kannst.</div>
+    <div class="text1">- Lieblingsrezepte bearbeiten kannst.</div>
+    <div class="text1">- Lieblingsrezepte auch wieder löschen kannst.</div>
   </div>
   <div class="text2">Seite erstellt von Dominik Wache</div>
 </template>
 
 <style scoped>
+.about {
+  margin-top: 10rem;
+}
+
 .text {
   font-size: xxx-large;
   padding-top: 1rem;
